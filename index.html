@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyGames - Δημήτρης Μπαναγής</title>
+  <style>
+    body { font-family: sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
+    header { background: #283593; color: white; padding: 20px; text-align: center; font-size: 28px; }
+    .games { display: flex; flex-wrap: wrap; justify-content: center; padding: 20px; gap: 20px; }
+    .game { background: white; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); width: 300px; text-align: center; padding: 20px; }
+    .game h3 { margin: 10px 0; }
+    .game iframe { width: 100%; height: 200px; border: none; border-radius: 8px; }
+    footer { text-align: center; padding: 20px; background: #c5cae9; color: #283593; }
+  </style>
+</head>
+<body>
+  <header>🎮 MyGames - Δημήτρης Μπαναγής</header>
+
+  <div class="games" id="games"></div>
+
+  <footer>
+    © 2025 Δημήτρης Μπαναγής - Όλα τα παιχνίδια σε ένα μέρος!
+  </footer>
+
+  <script>
+    const games = [
+      { name: "Hurrycane Sim", url: "https://dimitris-banagis.github.io/hurycane" },
+      { name: "Country Quiz", url: "https://dimitris-banagis.github.io/countryquiz" },
+      { name: "Ανέκδοτα", url: "https://dimitris-banagis.github.io/anekdotakia" },
+      { name: "200 παιχνιδια", url: "https://dimitris-banagis.github.io/gameverse" },
+      { name: "hurrycane simulator", url: "https://dimitris-banagis.github.io/hurycane-sim" },
+    const gamesContainer = document.getElementById("games");
+
+    games.forEach(game => {
+      const gameElement = document.createElement("div");
+      gameElement.classList.add("game");
+      gameElement.innerHTML = `
+        <h3>${game.name}</h3>
+        <iframe src="${game.url}" loading="lazy"></iframe>
+      `;
+      gamesContainer.appendChild(gameElement);
+    });
+  </script>
+</body>
+</html>
